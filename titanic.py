@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib as plt
 
 # Load the dataset
-df = pd.read_csv('titanic.csv')
+df = pd.read_csv('D:\DATA Science\titanic\titanic.csv')
 
 # Inspect structure
 df.shape
