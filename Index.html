@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:Menlo;}
+@font-face
+	{font-family:"\@PMingLiU";
+	panose-1:2 1 6 1 0 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:12.0pt;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.0pt 842.0pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:16.0pt;line-height:115%;font-family:"Times New Roman",serif'>Exploring
+Titanic Dataset with Pandas</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:16.0pt;line-height:115%;font-family:"Times New Roman",serif'>Name:
+Kevin Student_Id: g12460766</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Introduction</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>In this
+exercise we tried to explore the titanic dataset. First we need to load the
+data using pandas then process the data to data frame. Later we need to data
+cleaning and data analysis using pandas and create visualization using
+matplotlib.</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>1. Import
+the Required Libraries</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>import
+pandas as pd</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>import
+matplotlib as plt</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:13.5pt;background:white'><span
+style='font-size:9.0pt;font-family:Menlo;color:#267F99'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>This for
+import to open csv file using pandas and matplotlib for creating static,
+animated, and interactive visualizations in Python.</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>2. Load
+the Dataset</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Load the
+Titanic dataset from a CSV file named 'titanic.csv' into a Pandas DataFrame.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df = pd.read_csv('titanic.csv')</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>This
+process to convert the data to data frame.</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>3. Data
+Exploration</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'># Printing
+top 5 rows </span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df.head(5)</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=602 height=58 src="Index_files/image001.png"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>To print
+the first 5 rows of the data frame to understand the structure.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df.shape</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=115 height=41 src="Index_files/image002.png"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Print
+information about the how many columns and rows.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df.info()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=319 height=356 src="Index_files/image003.png"
+alt="A screenshot of a computer screen&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>To know
+their data types.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df.describe()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=601 height=157 src="Index_files/image004.png"
+alt="A screenshot of a computer screen&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>To see
+summary statistics for numerical columns (e.g., mean, min, max, etc.).</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>4. Data
+Cleaning</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df.isnull().sum()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=201 height=286 src="Index_files/image005.png"
+alt="A screenshot of a computer screen&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Identify
+missing values in the dataset </span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df1 =
+df.copy()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df1[&quot;Age&quot;]
+= df1[&quot;Age&quot;].mean()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df1.isnull().sum()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=205 height=303 src="Index_files/image006.png"
+alt="A screenshot of a computer&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>To add
+missing value with median in age column.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df1 =
+df1.dropna()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=206 height=326 src="Index_files/image007.png"
+alt="A screen shot of a computer&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>To drop
+missing value in cabin and embarked column.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>5. Data
+Analysis</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>df1['Sex'].value_counts()</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'><img
+width=271 height=121 id="Picture 1" src="Index_files/image008.png"
+alt="A black screen with white text&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Calculate
+and display the count of passengers by gender.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Compute
+the average age of passengers.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Determine
+the survival rate by passenger class.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>6. Data
+Visualization</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Create a
+bar chart to visualize the survival rate by passenger class.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Add
+appropriate labels and a title to the chart.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>7.
+Conclusion</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Summarize
+your findings or insights gained from analyzing the Titanic dataset.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Reflect on
+the importance of data cleaning and exploration in data analysis.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
