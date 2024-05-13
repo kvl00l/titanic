@@ -5,10 +5,10 @@
 
 # Titanic
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 # Load the dataset
-df = pd.read_csv('D:\DATA Science\titanic\titanic.csv')
+df = pd.read_csv('titanic.csv')
 
 # Inspect structure
 df.shape
@@ -32,11 +32,11 @@ df1.isnull().sum()
 df1['Sex'].value_counts()
 
 import seaborn as sns
-sns.countplot(x='Sex', data=df1, ) 
+sns.countplot(x='Sex', data=df1,)
+plt.title('Gender')
 plt.show()
 
 df1[['Sex']].plot.line()
-plt.title('Kevin')
 plt.show()
 
 # By group
@@ -47,7 +47,7 @@ df.groupby(['Pregnancies', 'Outcome']).mean()
 df.groupby(['Pregnancies', 'Outcome']).value_counts()
 df.groupby(['Pregnancies', 'Outcome']).value_counts(normalize = True)
 
-# Improt plt 
+# Import plt 
 import matplotlib.pyplot as plt
 
 # Visual BMI
