@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>titanic</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>titanic.notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7516,7 +7516,741 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Titanic</p>
+<h1 id="Titanic">Titanic<a class="anchor-link" href="#Titanic">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>In this exercise we tried to explore the titanic dataset. First we need to load the data using pandas then process the data to data frame. Later we need to data cleaning and data analysis using pandas and create visualization using matplotlib.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol>
+<li>Import the Required Libraries</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This for import to open csv file using pandas and matplotlib for creating static, animated, and interactive visualizations in Python.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="2">
+<li>Load the Dataset</li>
+</ol>
+<p>Load the Titanic dataset from a CSV file named 'titanic.csv' into a Pandas DataFrame.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'titanic.csv'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This process to convert the data to data frame.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="3">
+<li>Data Exploration</li>
+</ol>
+<p>In this step we want to know the data structure.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>PassengerId</th>
+<th>Survived</th>
+<th>Pclass</th>
+<th>Name</th>
+<th>Sex</th>
+<th>Age</th>
+<th>SibSp</th>
+<th>Parch</th>
+<th>Ticket</th>
+<th>Fare</th>
+<th>Cabin</th>
+<th>Embarked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>Braund, Mr. Owen Harris</td>
+<td>male</td>
+<td>22.0</td>
+<td>1</td>
+<td>0</td>
+<td>A/5 21171</td>
+<td>7.2500</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+<td>female</td>
+<td>38.0</td>
+<td>1</td>
+<td>0</td>
+<td>PC 17599</td>
+<td>71.2833</td>
+<td>C85</td>
+<td>C</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>Heikkinen, Miss. Laina</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>STON/O2. 3101282</td>
+<td>7.9250</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>113803</td>
+<td>53.1000</td>
+<td>C123</td>
+<td>S</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5</td>
+<td>0</td>
+<td>3</td>
+<td>Allen, Mr. William Henry</td>
+<td>male</td>
+<td>35.0</td>
+<td>0</td>
+<td>0</td>
+<td>373450</td>
+<td>8.0500</td>
+<td>NaN</td>
+<td>S</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To print the first 5 rows of the data frame to understand the structure.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>(891, 12)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Print information about the how many columns and rows.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;bound method DataFrame.info of      PassengerId  Survived  Pclass  \
+0              1         0       3   
+1              2         1       1   
+2              3         1       3   
+3              4         1       1   
+4              5         0       3   
+..           ...       ...     ...   
+886          887         0       2   
+887          888         1       1   
+888          889         0       3   
+889          890         1       1   
+890          891         0       3   
+
+                                                  Name     Sex   Age  SibSp  \
+0                              Braund, Mr. Owen Harris    male  22.0      1   
+1    Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1   
+2                               Heikkinen, Miss. Laina  female  26.0      0   
+3         Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1   
+4                             Allen, Mr. William Henry    male  35.0      0   
+..                                                 ...     ...   ...    ...   
+886                              Montvila, Rev. Juozas    male  27.0      0   
+887                       Graham, Miss. Margaret Edith  female  19.0      0   
+888           Johnston, Miss. Catherine Helen "Carrie"  female   NaN      1   
+889                              Behr, Mr. Karl Howell    male  26.0      0   
+890                                Dooley, Mr. Patrick    male  32.0      0   
+
+     Parch            Ticket     Fare Cabin Embarked  
+0        0         A/5 21171   7.2500   NaN        S  
+1        0          PC 17599  71.2833   C85        C  
+2        0  STON/O2. 3101282   7.9250   NaN        S  
+3        0            113803  53.1000  C123        S  
+4        0            373450   8.0500   NaN        S  
+..     ...               ...      ...   ...      ...  
+886      0            211536  13.0000   NaN        S  
+887      0            112053  30.0000   B42        S  
+888      2        W./C. 6607  23.4500   NaN        S  
+889      0            111369  30.0000  C148        C  
+890      0            370376   7.7500   NaN        Q  
+
+[891 rows x 12 columns]&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To know their data types</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;bound method NDFrame.describe of      PassengerId  Survived  Pclass  \
+0              1         0       3   
+1              2         1       1   
+2              3         1       3   
+3              4         1       1   
+4              5         0       3   
+..           ...       ...     ...   
+886          887         0       2   
+887          888         1       1   
+888          889         0       3   
+889          890         1       1   
+890          891         0       3   
+
+                                                  Name     Sex   Age  SibSp  \
+0                              Braund, Mr. Owen Harris    male  22.0      1   
+1    Cumings, Mrs. John Bradley (Florence Briggs Th...  female  38.0      1   
+2                               Heikkinen, Miss. Laina  female  26.0      0   
+3         Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  35.0      1   
+4                             Allen, Mr. William Henry    male  35.0      0   
+..                                                 ...     ...   ...    ...   
+886                              Montvila, Rev. Juozas    male  27.0      0   
+887                       Graham, Miss. Margaret Edith  female  19.0      0   
+888           Johnston, Miss. Catherine Helen "Carrie"  female   NaN      1   
+889                              Behr, Mr. Karl Howell    male  26.0      0   
+890                                Dooley, Mr. Patrick    male  32.0      0   
+
+     Parch            Ticket     Fare Cabin Embarked  
+0        0         A/5 21171   7.2500   NaN        S  
+1        0          PC 17599  71.2833   C85        C  
+2        0  STON/O2. 3101282   7.9250   NaN        S  
+3        0            113803  53.1000  C123        S  
+4        0            373450   8.0500   NaN        S  
+..     ...               ...      ...   ...      ...  
+886      0            211536  13.0000   NaN        S  
+887      0            112053  30.0000   B42        S  
+888      2        W./C. 6607  23.4500   NaN        S  
+889      0            111369  30.0000  C148        C  
+890      0            370376   7.7500   NaN        Q  
+
+[891 rows x 12 columns]&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To see summary statistics for numerical columns (e.g., mean, min, max, etc.).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
+<li>Data Cleaning</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>PassengerId      0
+Survived         0
+Pclass           0
+Name             0
+Sex              0
+Age            177
+SibSp            0
+Parch            0
+Ticket           0
+Fare             0
+Cabin          687
+Embarked         2
+dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Identify missing values in the dataset</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df1</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>PassengerId      0
+Survived         0
+Pclass           0
+Name             0
+Sex              0
+Age              0
+SibSp            0
+Parch            0
+Ticket           0
+Fare             0
+Cabin          687
+Embarked         2
+dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>df1 used to keep the original dataframe from any changes.</p>
+<p>To add missing value with median in age column.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To drop missing value in cabin and embarked column.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="5">
+<li>Data Analysis</li>
+</ol>
+<p>To see the analyse the data from the dataframe.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">'Sex'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>Sex
+male      107
+female     95
+Name: count, dtype: int64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This step used to count the the amount of the gender (male / female) in the data set.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Sex'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df1</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Gender'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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lJeXp9tvv11paWmVLloGAAC/PkbEjiTNmjXrhm9bAT/m4+OjJ554otJbmQDqP17fqIrN+mef1wIAAKjH6v2XCgIAANwMsQMAAIxG7AAAAKMRO/BYlmVp+vTpCg4Ols1m09///ne3zHHq1Cm3Pj6Amps8ebLju9jw62PMp7FgnrS0NG3YsEG7d+9W+/bt1aJFC3ePBACoh4gdeKyTJ08qLCxM/fr1c/coAIB6jLex4JEmT56s2bNn6/Tp07LZbGrXrp0qKiqUnJysyMhI+fn5qUePHnrzzTcd99m9e7dsNpvee+899ezZU35+fho8eLAKCgq0Y8cO3XrrrQoMDNS//uu/6sqVK477paWlqX///mratKmaN2+uESNG6OTJkzed7/jx47r//vvl7+8vu92uiRMn6vz587X28wB+TQYNGqTZs2crPj5ezZo1k91u19q1ax3fjB8QEKAOHTpox44dkqTr169r6tSpjt8NnTt31p/+9KebPsY/+30CsxA78Eh/+tOf9NRTT6l169Y6e/asDhw4oOTkZG3cuFFr1qzRZ599prlz5+qhhx5SRkaG032ffPJJ/fnPf9bevXuVm5ursWPHKiUlRZs2bdK7776rnTt3atWqVY79S0pKlJCQoIMHDyo9PV1eXl564IEHVFFRUeVshYWFGjx4sHr27KmDBw8qLS1N+fn5Gjt2bK3+TIBfk9dee00tWrTQ/v37NXv2bM2YMUNjxoxRv379dPjwYQ0dOlQTJ07UlStXVFFRodatW2vLli36/PPPlZSUpMWLF+uNN9644fF/7u8TGMICPNSLL75otW3b1rIsyyotLbUaN25s7d2712mfqVOnWuPHj7csy7J27dplSbI++OADx/bk5GRLknXy5EnHukcffdSKiYm54eOeO3fOkmQdO3bMsizLysnJsSRZR44csSzLsp5++mlr6NChTvfJzc21JFknTpyo9vMF8L2BAwda/fv3dyxfu3bNatKkiTVx4kTHurNnz1qSrMzMzCqPERcXZ8XGxjqWJ02aZI0aNcqyrJ/3+wRm4Zod1Atff/21rly5onvvvddpfXl5uXr27Om07rbbbnP82263q3Hjxmrfvr3Tuv379zuWs7OzlZSUpKysLJ0/f95xRuf06dPq1q1bpVmOHj2qXbt2yd/fv9K2kydPqlOnTtV7kgAcfvw6btCggZo3b67u3bs71v3wtw8LCgokSampqVq3bp1Onz6t7777TuXl5br99turPPYv+X0CMxA7qBcuX74sSXr33XfVqlUrp20//Rs4DRs2dPzbZrM5Lf+w7sdvUY0cOVJt27bV2rVrFR4eroqKCnXr1k3l5eU3nGXkyJFavnx5pW1hYWG/7IkBqFJVr9ufvral76+92bx5s+bNm6fnn39eUVFRCggI0B//+EdlZWVVeexf8vsEZiB2UC907dpVPj4+On36tAYOHOiy4164cEEnTpzQ2rVrdffdd0uSPvnkk5vep1evXtq6davatWsnb29eQoC77dmzR/369dPMmTMd6272IYPa+n0Cz8VvatQLAQEBmjdvnubOnauKigr1799fRUVF2rNnjwIDAzVp0qRqHbdZs2Zq3ry5XnnlFYWFhen06dNatGjRTe8TFxentWvXavz48VqwYIGCg4P19ddfa/PmzXr11VfVoEGDas0CoHo6duyojRs36r333lNkZKT+67/+SwcOHFBkZGSV+9fW7xN4LmIH9cbTTz+tkJAQJScn6x//+IeaNm2qXr16afHixdU+ppeXlzZv3qw5c+aoW7du6ty5s1auXKlBgwbd8D7h4eHas2ePFi5cqKFDh6qsrExt27bVfffdJy8vPuAI1LVHH31UR44c0YMPPiibzabx48dr5syZjo+mV6U2fp/Ac9ksy7LcPQQAAEBt4X9DAQCA0YgdAABgNGIHAAAYjdgBAABGI3YAAIDRiB0AAGA0YgcAABiN2AEAAEYjdgDUS+fOndOMGTPUpk0b+fj4KDQ0VDExMdqzZ4+7RwPgYfhzEQDqpdjYWJWXl+u1115T+/btlZ+fr/T0dF24cMHdowHwMJzZAVDvFBYW6uOPP9by5ct1zz33qG3btrrzzjuVmJio3/3ud459HnnkEYWEhCgwMFCDBw/W0aNHJX1/Vig0NFTPPvus45h79+5Vo0aNlJ6e7pbnBKD2EDsA6h1/f3/5+/tr27ZtKisrq3KfMWPGqKCgQDt27NChQ4fUq1cvDRkyRBcvXlRISIjWrVunJ598UgcPHtSlS5c0ceJEzZo1S0OGDKnjZwOgtvGHQAHUS1u3btW0adP03XffqVevXho4cKDGjRun2267TZ988omGDx+ugoIC+fj4OO7ToUMHLViwQNOnT5ckxcXF6YMPPlCfPn107NgxHThwwGl/AGYgdgDUW6Wlpfr444+1b98+7dixQ/v379err76qkpISzZkzR35+fk77f/fdd5o3b56WL1/uWO7WrZtyc3N16NAhde/e3R1PA0AtI3YAGOORRx7R+++/r5kzZ2rVqlXavXt3pX2aNm2qFi1aSJKOHz+uO+64Q1evXtVbb72lkSNH1vHEAOoCn8YCYIyuXbtq27Zt6tWrl/Ly8uTt7a127dpVuW95ebkeeughPfjgg+rcubMeeeQRHTt2TC1btqzboQHUOs7sAKh3Lly4oDFjxmjKlCm67bbbFBAQoIMHD2r27NkaPny4Xn31VQ0YMECXLl3SihUr1KlTJ505c0bvvvuuHnjgAfXp00fz58/Xm2++qaNHj8rf318DBw5UUFCQtm/f7u6nB8DFiB0A9U5ZWZmefPJJ7dy5UydPntTVq1cVERGhMWPGaPHixfLz89OlS5f0n//5n9q6davjo+YDBgxQcnKyTp48qXvvvVe7du1S//79JUmnTp1Sjx499Ic//EEzZsxw8zME4ErEDgAAMBrfswMAAIxG7AAAAKMROwAAwGjEDgAAMBqxAwAAjEbsAAAAoxE7AADAaMQOAAAwGrEDAACMRuwAAACjETsAAMBoxA4AADDa/wPo+m0U87jbfQAAAABJRU5ErkJggg=="/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Calculate and display the count of passengers by gender and visualize the data in bar graph.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>29.699117647058813</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Compute the average age of passengers.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Determine the survival rate by passenger class.</p>
 </div>
 </div>
 </div>
